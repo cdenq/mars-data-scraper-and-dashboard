@@ -1,0 +1,15 @@
+body {
+    background-color: darkgrey;
+}
+
+.heading {
+    text-align: center;
+}
+
+.row {
+    padding: 3em;
+}
+
+.container {
+    padding: 5em;
+}

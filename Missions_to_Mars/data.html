@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- meta tags -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- style references -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- title -->
+    <title>cdenq mars scraper data</title>
+</head>
+<body>
+    <div class = "container">
+        <!-- scrap prompt -->
+        <div class = "row heading">
+            <h1>Mission to Mars</h1>
+            <p>Here is the research on Mars. <br> Want to refresh?</p>
+            <a href = "/scrape">
+                <button type="button" class="btn btn-primary">
+                    Refresh!
+                </button>
+            </a>
+        </div>
+
+        <!-- latest news -->
+        <div class = "row">
+            <div class="col-12">
+                <h2>Latest Mars News</h2>
+                <h3>{{ info.news_title }}</h3>
+                <p>{{ info.news_p }}</p>
+            </div>
+        </div>
+
+        <!-- featured image + stats -->
+        <div class="row">
+            <div class="col-sm-12 col-md-7">
+                <h2>Featured Space Image</h2>
+                <img class="img-fluid " src = {{ info.featured_image_url }} alt = "featured image">
+            </div>
+
+            <div class="col-sm-12 col-md-5">
+                <h2>Mars Facts</h2>
+                {{ info.html_table }}
+            </div>
+        </div>
+
+        <!-- mars hemispheres -->
+        <div class="row">
+            <div class="col-12">
+                <h3 style = "text-align: center;">Mars Hemispheres</h3>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src={{info.hemi_ls_of_dicts[0].img_url}} alt={{info.hemi_ls_of_dicts[0].title}}>
+                <div class="card-body">
+                  <h5 class="card-title">{{info.hemi_ls_of_dicts[0].title}}</h5>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src={{info.hemi_ls_of_dicts[1].img_url}} alt={{info.hemi_ls_of_dicts[1].title}}>
+                <div class="card-body">
+                  <h5 class="card-title">{{info.hemi_ls_of_dicts[1].title}}</h5>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src={{info.hemi_ls_of_dicts[2].img_url}} alt={{info.hemi_ls_of_dicts[2].title}}>
+                <div class="card-body">
+                  <h5 class="card-title">{{info.hemi_ls_of_dicts[2].title}}</h5>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src={{info.hemi_ls_of_dicts[3].img_url}} alt={{info.hemi_ls_of_dicts[3].title}}>
+                <div class="card-body">
+                  <h5 class="card-title">{{info.hemi_ls_of_dicts[3].title}}</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
