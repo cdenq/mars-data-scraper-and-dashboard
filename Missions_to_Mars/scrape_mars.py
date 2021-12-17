@@ -11,15 +11,6 @@ def splinter_setup():
     executable_path = {'executable_path': ChromeDriverManager().install()}
     return Browser('chrome', **executable_path, headless = False)
 
-#soup setup function
-def soup_setup(url):
-    '''
-    requires browser_var = splinter_setup() before using this function
-    '''
-    browser.visit(url)
-    html = browser.html
-    return bs(html, 'html.parser')
-
 def scrape():
     #setup splinter
     browser = splinter_setup
@@ -32,7 +23,9 @@ def scrape():
 
     #setup url
     news_url = 'https://redplanetscience.com/'
-    soup = soup_setup(news_url)
+    browser.visit(news_url)
+    html = browser.html
+    soup = bs(html, 'html.parser')
 
     #retrieve latest news title paragraph
     news_title = soup.find_all('div', class_ = 'content_title')[0].text
@@ -48,7 +41,9 @@ def scrape():
 
     #setup url
     image_url = 'https://spaceimages-mars.com/'
-    soup = soup_setup(image_url)
+    browser.visit(image_url)
+    html = browser.html
+    soup = bs(html, 'html.parser')
 
     #retrieve featured image
     partial_url = soup.find('a', class_ = 'showimg fancybox-thumbs')['href']
@@ -78,7 +73,9 @@ def scrape():
 
     #setup url
     hemi_base_url = 'https://marshemispheres.com/'
-    soup = soup_setup(hemi_base_url)
+    browser.visit(hemi_base_url)
+    html = browser.html
+    soup = bs(html, 'html.parser')
 
     #grabbing image containers
     hemi_data = soup.find_all('div', class_ = 'item')
