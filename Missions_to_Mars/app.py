@@ -20,7 +20,7 @@ def home():
 def scraper():
     listings = mongo.db.listings
     listings_data = scrape_mars.scrape()
-    listings.update({}, listings_data, upsert = True)
+    listings.update_many({}, {"$set": listings_data}, upsert = True)
     return redirect("/data")
 
 # Display Data Route
