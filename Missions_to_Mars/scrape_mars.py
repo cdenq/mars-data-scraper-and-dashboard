@@ -4,15 +4,10 @@ from bs4 import BeautifulSoup as bs
 from splinter import Browser
 from webdriver_manager.chrome import ChromeDriverManager
 
-#splinter setup function
-def splinter_setup():
-    executable_path = {'executable_path': ChromeDriverManager().install()}
-    return Browser('chrome', **executable_path, headless = False)
-
-#splinter scrape function
 def scrape():
     #setup splinter
-    browser = splinter_setup
+    executable_path = {'executable_path': ChromeDriverManager().install()}
+    browser = Browser('chrome', **executable_path, headless = False)
 
     #----------------------------------
     #LATEST NEWS
