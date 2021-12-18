@@ -51,11 +51,18 @@ def scrape():
     task = 'FACTS'
     print(f"Scraping {task}...")
 
+    #url scraping w pandas
+    facts_url = 'https://galaxyfacts-mars.com/'
+    tables = pd.read_html(facts_url)
+    df = tables[1]
+    df.to_html('facts_mars.html', index = False)    
+
     #setup url
     facts_url = 'https://galaxyfacts-mars.com/'
     tables = pd.read_html(facts_url)
     df = tables[1]
-    html_table = df.to_html('facts_mars.html', index = False)
+    # df.to_html('facts_mars.html', index = False)
+    html_table = df.to_html(index = False)
 
     print(f"{task} completed.")
 
