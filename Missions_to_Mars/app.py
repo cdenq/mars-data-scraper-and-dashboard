@@ -20,13 +20,13 @@ def home():
 def scraper():
     listings = mongo.db.listings
     listings_data = scrape_mars.scrape()
-    listings.update_many({}, {"$set": listings_data}, upsert = True)
+    listings.replace_one({}, listings_data, upsert = True)
     return redirect("/data")
 
 # Display Data Route
 @app.route("/data")
 def data():
-    mars_info = mongo.db.mars_data.find_one()
+    mars_info = mongo.db.listings.find_one()
     return render_template("data.html", info = mars_info)
 
 if __name__ == "__main__":

@@ -53,8 +53,15 @@
             <div class="col-12">
                 <h3 style = "text-align: center;">Mars Hemispheres</h3>
             </div>
-
-            <div class="card" style="width: 18rem;">
+            {% for item in info.hemi_ls_of_dicts %}
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src={{item.img_url}} alt={{item.title}}>
+                    <div class="card-body">
+                    <h5 class="card-title">{{item.title}}</h5>
+                    </div>
+                </div>
+            {% endfor %}
+            <!-- <div class="card" style="width: 18rem;">
                 <img class="card-img-top" src={{info.hemi_ls_of_dicts[0].img_url}} alt={{info.hemi_ls_of_dicts[0].title}}>
                 <div class="card-body">
                   <h5 class="card-title">{{info.hemi_ls_of_dicts[0].title}}</h5>
@@ -77,7 +84,7 @@
                 <div class="card-body">
                   <h5 class="card-title">{{info.hemi_ls_of_dicts[3].title}}</h5>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </body>
