@@ -125,4 +125,6 @@ def scrape():
 
     print(f"{task} completed.")
 
+    browser.quit()
+    
     return final_dict

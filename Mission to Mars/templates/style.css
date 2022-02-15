@@ -1,5 +1,5 @@
 body {
-    background-color: darkgrey;
+    background-color: rgb(255, 208, 122);
 }
 
 .heading {
@@ -12,4 +12,5 @@ body {
 
 .container {
     padding: 5em;
+    background-color: rgb(255, 225, 168);
 }

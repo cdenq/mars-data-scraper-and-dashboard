@@ -1,7 +1,7 @@
-# web-scraping-challenge
+# mars-data-scraper-and-dashboard
 ## About Mission to Mars
 
-`Mission to Mars` is a fullstack development endeavor that webscrapes data, load it into a monogoDB, and automatically generates and displays the scraped data with Flask.
+`Mission to Mars` is a fullstack development challenge that webscrapes data about Mars, loads it into a monogoDB, and automatically visualizes the scraped data on a webpage application (generated via Flask). 
 
 ## Built with
 - Python
